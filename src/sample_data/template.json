@@ -1,0 +1,13 @@
+{
+  "version": "v1",
+  "template_size": [1200, 1700],
+  "threshold": 150,
+  "bubbles": {
+    "Q1": {"bbox": [100,200,40,40], "choice": "A"},
+    "Q2": {"bbox": [200,200,40,40], "choice": "A"}
+  },
+  "subjects": {
+    "math": [1,10],
+    "science": [11,20]
+  }
+}

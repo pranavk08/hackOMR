@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMR Scanner - Upload & Process</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-scanner"></i> OMR Scanner</h1>
+            <p>Upload your OMR sheet image and get instant results</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drop your OMR image here</h3>
+                        <p>or click to browse files</p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <i class="fas fa-file-image"></i>
+                        <span id="fileName"></span>
+                        <button class="remove-btn" onclick="removeFile()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button class="process-btn" id="processBtn" onclick="processImage()" disabled>
+                    <i class="fas fa-cogs"></i>
+                    Process OMR Sheet
+                </button>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing your OMR sheet...</p>
+            </div>
+
+            <div class="results" id="results" style="display: none;">
+                <h3><i class="fas fa-chart-line"></i> Results</h3>
+                <div class="results-content">
+                    <div class="score-summary">
+                        <div class="total-score">
+                            <span class="score-label">Total Score</span>
+                            <span class="score-value" id="totalScore">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="subject-scores" id="subjectScores">
+                        <!-- Subject scores will be populated here -->
+                    </div>
+                    
+                    <div class="answers-section">
+                        <h4>Detected Answers</h4>
+                        <div class="answers-grid" id="answersGrid">
+                            <!-- Answers will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="images-section">
+                        <h4>Processed Images</h4>
+                        <div class="image-gallery">
+                            <div class="image-item">
+                                <h5>Rectified Image</h5>
+                                <img id="rectifiedImg" alt="Rectified OMR sheet">
+                            </div>
+                            <div class="image-item">
+                                <h5>Overlay with Detection</h5>
+                                <img id="overlayImg" alt="Overlay with bubble detection">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error" id="error" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="errorMessage"></span>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 OMR Scanner - Hackathon PoC</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
