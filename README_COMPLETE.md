@@ -232,18 +232,4 @@ python run_smoke_test.py
 python test_api.py
 ```
 
-## 📄 License
-
-This project is created for hackathon purposes. Feel free to use and modify as needed.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
----
-
-**Happy Coding! 🎉**
+I’m a beginner working on this OMR hackathon. I set up the backend and frontend, but I’m facing API connection issues between them. I tried my best to align the ports and URLs; if the app doesn’t connect, please set the frontend API base URL to the exact backend port (e.g., 8000/8002/5000), or run the production server (single-page UI + API) because of time limit im not able to processed more. If you see errors, check the backend /docs or /health on the chosen port, then match that in the frontend. 
